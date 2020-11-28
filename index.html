@@ -1,28 +1,150 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Alexander Dimitrov</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:700" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+</head>
 
 <body>
-    <h1>Alexander Dimitrov</h1>
-    <h2>About me</h2>
-    <p>Hey everyone, I am Alex, a software developer from Austria. 
-        I am mainly a Java Developer and have worked with
-        Java EE with an WildFly Server.
-        Additionally I have experience with Angular/AngularJS. 
-        I got my Bachelors at the TU Vienna and am currently
-        studying for my Masters Degree at Technikum Wien.
-        Microservices have gained my interest, especially the Quarkus Framework. 
-    </p>
-    <h2>My Stuff</h2>
-    <p>
-        My Microservice-Lab Repo deals with possible solutions for Microservice architecture.
-        You could say it's my Coding Playground. Currently I am working with the Quarkus Framework 
-        for the microservices themself, KeyCloak for authentication and Graylog for logging.
-        I will try to write mini tutorials on how to do stuff.
-    </p>
-    <h2>Contact</h2>
-    <p>
-        <a href= "mailto:alexanderdimitrov@gmx.at">alexanderdimitrov@gmx.at</a>
-    </p>
+    <div id="loading">
+        <div id="spinner"></div>
+    </div>
+    <div id="particles-js"></div>
+    <div id="box">
+        <div class="box1 onlywide animated bounceOutLeft" style="animation-delay:1.7s;"></div>
+        <div class="box2 onlywide animated bounceOutLeft" style="animation-delay:1.8s;"></div>
+        <div class="box2 onlywide animated bounceOutLeft" style="animation-delay:1.9s;"></div>
+        <div class="box2 animated bounceOutRight" style="animation-delay:1.9s;"></div>
+        <div class="box2 onlywide animated bounceOutRight" style="animation-delay:1.8s;"></div>
+        <div class="box2 onlywide animated bounceOutRight" style="animation-delay:1.7s;"></div>
+    </div>
+    <a id="about" onclick="showabout()" class="animated fadeIn" style="animation-delay:2.2s;">about</a>
+    <a id="work" onclick="showwork()" class="animated fadeIn" style="animation-delay:2.2s;">work</a>
+    <a id="contact" onclick="showcontact()" class="animated fadeIn" style="animation-delay:2.2s;">contact</a>
+    <div id="middle" class="animated slideInDown" style="animation-delay:2.0s;">
+        <h1>Alexander Dimitrov</h1>
+        <h2>Software Developer / Java / Angular / Vienna</h2>
+        <div id="menu">
+            <a onclick="showabout()">about</a>
+            <a onclick="showwork()">work</a>
+            <a onclick="showcontact()">contact</a>
+        </div>
+    </div>
+    <div id="work_container" class="container">
+        <div onclick="closework()"><i class="fas fa-angle-right"></i></div>
+        <h1>work.</h1>
+        <section>
+            <h2>my work</h2>
+
+            <p>
+                I have experience in managing smaller projects, developing new features and maintining software post realease. 
+                In my current job I plan and realize new features for an inhouse product. For example, updating the WildFly Server
+                to the latest version and migration to Java 11.
+                <br />
+                Furthemore I participated in the development of two Blockchain projects, using BigChainDB, Solidity and Parity. 
+                I also developed a little project with React and some proof of concept microservices.
+            </p>
+
+            <p>
+                I have worked with these languages
+            </p>
+            <div id="used">
+
+                <div><i class="fas fa-circle"></i>&nbsp;Java</div>
+                <div><i class="fas fa-circle"></i>&nbsp;TypeScript</div>
+                <div><i class="fas fa-circle"></i>&nbsp;Javascript</div>
+                <div><i class="fas fa-circle"></i>&nbsp;SQL</div>
+                <div><i class="fas fa-circle"></i>&nbsp;Scala</div>
+                <div><i class="fas fa-circle"></i>&nbsp;Haskell</div>
+                <div><i class="fas fa-circle"></i>&nbsp;HTML5</div>
+                <div><i class="fas fa-circle"></i>&nbsp;C</div>
+                <div><i class="fas fa-circle"></i>&nbsp;Solidity</div>
+                <div><i class="fas fa-circle"></i>&nbsp;R</div>
+            </div>
+            <p>
+                and these frameworks
+            </p>
+            <div id="used">
+
+                <div><i class="fas fa-circle"></i>&nbsp;Java Enterprise</div>
+                <div><i class="fas fa-circle"></i>&nbsp;Angular</div>
+                <div><i class="fas fa-circle"></i>&nbsp;AngularJs</div>
+                <div><i class="fas fa-circle"></i>&nbsp;React</div>
+                <div><i class="fas fa-circle"></i>&nbsp;Quarkus</div>
+                <div><i class="fas fa-circle"></i>&nbsp;Spring Boot</div>
+                <div><i class="fas fa-circle"></i>&nbsp;Hibernate</div>
+                <div><i class="fas fa-circle"></i>&nbsp;BigchainDB</div>
+            </div>
+        </section>
+    </div>
+    <div id="about_container" class="container">
+        <div onclick="closeabout()"><i class="fas fa-angle-left"></i></div>
+        <h1>about.</h1>
+
+        <section>
+            <img src="profile_img.jpg" width="30%" height="30%" style="float:right; padding-left:15px; padding-bottom:15px;" >
+
+            <h2>about me</h2>
+
+            <p>Hey everyone!
+                <br />
+                <br />
+                My name is Alex. I´m a Software Developer based in Vienna, Austria.
+                I got my bachelors degree in "Software & Information Engineering" at the Technical University
+                Vienna and am currently studying for my
+                masters degree in "Software Engineering" at Technikum Wien.
+                Java is my programming language of choice, but I also have experience in Angular/AngularJS.
+                I'm interested in Microservice Architecture and have developed some proof of concept projects at my current job
+                with the Quarkus Framework.
+                Additionally I have some experience with Blockchain technology, mainly with solidity and parity.
+            </p>
+            <p>
+                In my spare time I like to go bouldering, mountain biking, hiking and during lockdowns
+                even jogging. I love meeting up with friends, listen to heavy metal and enjoy a good game of CS:GO.
+            </p>
+        </section>
+        <section>
+            <h2>skills</h2>
+            <p>
+                I have experience in Java and am an Oracle certified Associate for Java SE 8.
+                Technology-wise I use mostly Java Enterprise/Jakarta, Angular with Material Design and a WildFly Server.
+                Recent additions to my repertoire are the Spring Boot and Quarkus framework.
+                Check out the work section for more info.
+            </p>
+
+
+        </section>
+    </div>
+    <div id="contact_container" class="container">
+        <div onclick="closecontact()"><i class="fas fa-angle-down"></i></div>
+        <h1>contact.</h1>
+        <section>
+            <h2>contact me</h2>
+            <p>
+               feel free to contact me at <a href="mailto:alexanderdimitrov@gmx.at" style="color: white;">alexanderdimitrov@gmx.at</a>
+            <br />
+            you can also check out my <a href="https://www.linkedin.com/in/alexander-dimitrov-961649174/" style="color: white;">LinkedIn Page</a>
+            <br />
+            some code of mine is on <a href="https://github.com/Ev1lKn1vel" style="color: white;">Github</a>
+            </p>
+        </section>
+    </div>
+    <div id="footer">
+        credit to <br> <a href="https://imfunniee.github.io">imfunniee</a>
+    </div>
+    <script src="index.js" type="text/javascript"></script>
+    <script src="particles.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
